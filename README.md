@@ -91,7 +91,7 @@ Processes the context and categorizes the response quality.
 
 1. Clone this repository:
    ```bash
-   git clone [https://github.com/YOUR_USERNAME/Advanced-Dental-RAG-Agent.git](https://github.com/YOUR_USERNAME/Advanced-Dental-RAG-Agent.git)
+   git clone [https://github.com/omar-n8n/Advanced-Dental-RAG-Agent.git](https://github.com/omar-n8n/Advanced-Dental-RAG-Agent.git)
    ```
 2. Import the JSON workflow file into your **n8n** instance.
 3. Configure your API credentials for:
