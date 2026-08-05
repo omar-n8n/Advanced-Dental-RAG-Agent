@@ -42,6 +42,30 @@ Politely handles unsupported or unrelated questions while keeping the conversati
 ### ⚡ Real-Time Messenger Integration
 Processes incoming Meta Messenger Webhooks instantly for seamless communication.
 
+# 📸 Project Preview
+
+## 🖥️ Dashboard
+
+![Dashboard](Screenshots/Dashboard.jpeg)
+
+---
+
+## 📅 Appointment Booking Flow
+
+![Booking Flow](Screenshots/Booking Flow.jpeg)
+
+---
+
+## 🤖 AI Decision Engine
+
+![AI Decision](screenshots/AI Decision.jpeg)
+
+---
+
+## 🔄 Agent Overview
+
+![Agent](screenshots/Agent.jpeg)
+
 ---
 
 # 🆕 Version 2 Improvements
