@@ -58,14 +58,13 @@ Processes incoming Meta Messenger Webhooks instantly for seamless communication.
 
 ## 🤖 AI Decision Engine
 
-![AI Decision](screenshots/AI-Decision.jpeg)
+![AI Decision](Screenshots/AI-Decision.jpeg)
 
 ---
 
 ## 🔄 Agent Overview
 
-![Agent](screenshots/Agent.jpeg)
-
+![Agent Overview](Screenshots/Agent.jpeg)
 ---
 
 # 🆕 Version 2 Improvements
