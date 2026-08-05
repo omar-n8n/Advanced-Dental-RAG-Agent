@@ -1,102 +1,257 @@
-# 🦷 Advanced Dental Clinic RAG Support Agent
+# 🦷 AI Dental Clinic Customer Support & Appointment Booking System
 
-An automated, intelligent customer support system built using **n8n**, **OpenAI**, **Pinecone Vector Store**, and **Retrieval-Augmented Generation (RAG)** architecture. 
+An advanced AI-powered customer support and appointment booking system built using **n8n**, **OpenAI**, **Pinecone Vector Store**, and **Retrieval-Augmented Generation (RAG)**.
 
-This workflow seamlessly integrates knowledge base ingestion, real-time messaging, AI-driven decision-making, and intelligent escalation mechanisms for dental practice management.
-
----
-
-## ✨ Key Features
-
-* **🤖 RAG-Powered Intelligence:** Combines OpenAI LLM with Pinecone Vector Store for precise, context-aware answers based on clinic documentation.
-* **🔄 Automated Knowledge Sync:** Dual ingestion pipeline (Automatic via Google Drive triggers + Manual fallback) to keep the clinic's knowledge base always up to date.
-* **⚡ Smart Intent Evaluation & Routing:** Dynamically parses AI responses to evaluate confidence, status, and response accuracy before replying.
-* **🚨 Seamless Human Escalation:** Automatically routes complex inquiries to human agents by generating unique Ticket IDs, logging them into Google Sheets, and alerting the support team via email.
-* **⚡ Real-Time Webhook Processing:** Integrates directly with Meta Messenger Webhooks for instant patient interaction and smooth execution.
-* **🛡️ Out-of-Scope Handling:** Gracefully manages off-topic or unsupported user questions with polite, structured fallback responses.
+The workflow combines AI-powered knowledge retrieval, automated appointment scheduling, intelligent routing, human escalation, and real-time analytics into one complete solution for modern dental clinics.
 
 ---
 
-## 📐 System Architecture Overview
+# ✨ Key Features
 
-```text
-[ Google Drive / Manual Ingestion ] ➔ [ Vector Database (Pinecone) ]
-                                                │
-[ Customer (Messenger) ] ➔ [ Customer Request Processing ]
-                                                │
-                                    [ AI Decision Engine ]
-                                   /          |          \
-                 [ Answered Response ]  [ Escalation ]  [ Out of Scope ]
-                                              │
-                                    [ Google Sheets & Email ]
+### 🤖 AI-Powered Customer Support (RAG)
+Uses OpenAI with Pinecone Vector Store to provide accurate, context-aware answers based on the clinic's knowledge base.
+
+### 📅 AI Appointment Booking
+Patients can book appointments directly through the AI assistant. The workflow checks doctor availability, schedules appointments, and stores booking information automatically.
+
+### 📊 Dashboard & Analytics
+Provides a centralized dashboard for monitoring appointments, support tickets, workflow performance, and customer interactions.
+
+### 🔄 Automated Knowledge Synchronization
+Keeps the clinic knowledge base up to date using:
+
+- Automatic Google Drive Trigger
+- Manual Ingestion Pipeline
+
+Documents are automatically processed, chunked, embedded, and stored in Pinecone.
+
+### ⚡ Intelligent AI Routing
+Every customer request is evaluated based on confidence and intent before being routed automatically.
+
+### 🚨 Human Escalation
+When AI cannot confidently answer:
+
+- Generates a unique Ticket ID
+- Logs customer information into Google Sheets
+- Sends an email notification to the support team
+- Notifies the customer that a human agent will follow up
+
+### ⚪ Out-of-Scope Detection
+Politely handles unsupported or unrelated questions while keeping the conversation professional.
+
+### ⚡ Real-Time Messenger Integration
+Processes incoming Meta Messenger Webhooks instantly for seamless communication.
+
+---
+
+# 🆕 Version 2 Improvements
+
+✅ AI Appointment Booking Flow
+
+✅ Interactive Dashboard
+
+✅ Improved Workflow Logic
+
+✅ Better Ticket Management
+
+✅ Enhanced AI Routing
+
+✅ Performance Optimizations
+
+---
+
+# 🏗️ System Architecture
+
+```
+             Google Drive
+                   │
+           Automatic / Manual
+             Knowledge Sync
+                   │
+         Recursive Text Splitter
+                   │
+        OpenAI Embeddings
+                   │
+          Pinecone Vector Store
+                   │
+────────────────────────────────────────────
+
+        Customer (Messenger)
+
+                │
+
+      Messenger Webhook
+
+                │
+
+   Customer Request Processing
+
+                │
+
+       AI Decision Engine
+
+      ┌─────────┼─────────┐
+      │         │         │
+ Answered   Booking   Escalation
+      │         │         │
+Messenger  Google Sheets Ticket System
+      │         │         │
+ Dashboard  Booking DB  Email Alerts
 ```
 
 ---
 
-## 🛠️ Key Modules Breakdown
+# 🛠️ Workflow Modules
 
-### 1. 🗄️ Vector Database Ingestion (Knowledge Base)
-Automatically updates and synchronizes the clinic’s knowledge base into **Pinecone Vector Store (`Clinic Knowledge Base`)**.
-* **Triggers:**
-  * **Automatic Trigger:** Detects new document uploads in Google Drive.
-  * **Manual Trigger:** Allows on-demand batch ingestion.
-* **Text Processing Pipeline:** Uses **Recursive Character Text Splitter** to chunk documents efficiently before generating vector embeddings and storing them in Pinecone.
+## 1️⃣ Knowledge Base Management
 
----
+The workflow automatically synchronizes clinic documents into Pinecone.
 
-### 2. 📨 Customer Request Processing
-Handles real-time incoming messages from patients through social channels.
-* **Webhook Ingestion:** Listens to incoming **Messenger Webhooks**.
-* **Data Extraction:** Extracts essential parameters such as `Sender ID`, `Customer Name`, and `Message Text`.
-* **RAG Retrieval:** Connects to Pinecone via OpenAI Embeddings to retrieve relevant context from the **Clinic Knowledge Base**.
+### Automatic Pipeline
 
----
+- Google Drive Trigger
+- Document Processing
+- Recursive Character Text Splitter
+- OpenAI Embeddings
+- Pinecone Vector Store
 
-### 3. 🧠 AI Decision Engine & Routing
-Processes the context and categorizes the response quality.
-* **Parse AI Response:** Evaluates response criteria including `Status`, `Confidence Score`, and the candidate `Response`.
-* **Route by Status:** Dynamically routes the workflow based on confidence and intent evaluation.
+### Manual Pipeline
+
+Allows administrators to manually refresh the knowledge base whenever needed.
 
 ---
 
-### 4. 🔀 Workflow Execution Paths
+## 2️⃣ Customer Request Processing
 
-#### 🟢 Path A: Answered Response
-* Triggered when the AI has high confidence and accurate knowledge base information.
-* Instantly sends a direct, helpful response back to the customer.
+Handles incoming patient messages through Messenger.
 
-#### 🔵 Path B: Escalation Flow (Human Handoff)
-* Triggered when the inquiry requires human support, custom scheduling, or complex clinic inquiries.
-* **Ticket Generation:** Generates a unique `Ticket ID`.
-* **Logging:** Logs customer details and tickets into **Google Sheets**.
-* **Notification:** Automatically sends an alert email to the **Support Team**.
-* **Customer Feedback:** Sends a friendly follow-up message to the customer assuring them a support representative will reach out.
+Responsibilities include:
 
-#### ⚪ Path C: Out of Scope Response
-* Handles questions unrelated to dental services or clinic operations with polite, predefined boundary responses.
+- Receiving Webhook events
+- Extracting customer information
+- Processing messages
+- Retrieving relevant knowledge using Pinecone
+- Passing context to the AI Agent
 
 ---
 
-## ⚡ Tech Stack
+## 3️⃣ AI Decision Engine
 
-* **Workflow Automation:** n8n
-* **LLM Engine:** OpenAI (GPT Model)
-* **Vector Store:** Pinecone (`Clinic Knowledge Base`)
-* **Text Chunking:** Recursive Character Text Splitter
-* **Database & Messaging:** Google Drive, Google Sheets, Gmail API, Messenger Webhooks
+The AI evaluates every request and determines the most appropriate action based on:
+
+- Intent
+- Confidence
+- Retrieved Context
+- Business Rules
 
 ---
 
-## 🚀 Getting Started
+## 4️⃣ Workflow Execution Paths
 
-1. Clone this repository:
-   ```bash
-   git clone [https://github.com/omar-n8n/Advanced-Dental-RAG-Agent.git](https://github.com/omar-n8n/Advanced-Dental-RAG-Agent.git)
-   ```
-2. Import the JSON workflow file into your **n8n** instance.
-3. Configure your API credentials for:
-   * **OpenAI**
-   * **Pinecone**
-   * **Google Drive / Sheets / Gmail**
-   * **Meta Messenger App**
-4. Activate the workflow!
+### 🟢 Answered Response
+
+The AI confidently answers the customer's question immediately.
+
+---
+
+### 📅 Appointment Booking
+
+If the customer wants to schedule a visit:
+
+- Collects booking information
+- Validates availability
+- Stores appointment data
+- Sends confirmation to the patient
+
+---
+
+### 🔵 Human Escalation
+
+If human assistance is required:
+
+- Generates Ticket ID
+- Saves ticket into Google Sheets
+- Emails the support team
+- Notifies the customer
+
+---
+
+### ⚪ Out-of-Scope
+
+Handles unsupported questions with predefined professional responses.
+
+---
+
+# 📸 Screenshots
+
+Screenshots of the workflow, dashboard, and booking flow are available in the **/screenshots** folder.
+
+Included images:
+
+- Workflow Overview
+- AI Decision Flow
+- Appointment Booking Flow
+- Dashboard
+- Ticket Management
+- Knowledge Base Pipeline
+
+---
+
+# ⚡ Technology Stack
+
+- **Workflow Automation:** n8n
+- **AI Model:** OpenAI GPT
+- **Vector Database:** Pinecone
+- **RAG Architecture**
+- **Embeddings:** OpenAI Embeddings
+- **Text Chunking:** Recursive Character Text Splitter
+- **Database:** Google Sheets
+- **Knowledge Storage:** Google Drive
+- **Email:** Gmail API
+- **Messaging:** Meta Messenger Webhooks
+- **Dashboard:** Looker Studio
+
+---
+
+# 🚀 Getting Started
+
+Clone the repository:
+
+```bash
+git clone https://github.com/omar-n8n/Advanced-Dental-RAG-Agent.git
+```
+
+Import the workflow JSON into your n8n instance.
+
+Configure the following credentials:
+
+- OpenAI API
+- Pinecone
+- Google Drive
+- Google Sheets
+- Gmail API
+- Meta Messenger
+- Looker Studio (Optional)
+
+Activate the workflow and start automating your dental clinic.
+
+---
+
+# 💡 Use Cases
+
+- Dental Clinics
+- Medical Centers
+- Healthcare Customer Support
+- Appointment Scheduling
+- AI Receptionist
+- AI Customer Service
+
+---
+
+# 👨‍💻 Author
+
+**Omar Ali Osman**
+
+AI Automation Developer
+
+Specialized in building AI-powered workflows using n8n, OpenAI, APIs, and RAG systems.
