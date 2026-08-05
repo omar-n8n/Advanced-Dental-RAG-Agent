@@ -52,13 +52,13 @@ Processes incoming Meta Messenger Webhooks instantly for seamless communication.
 
 ## 📅 Appointment Booking Flow
 
-![Booking Flow](Screenshots/Booking Flow.jpeg)
+![Booking Flow](Screenshots/Booking-Flow.jpeg)
 
 ---
 
 ## 🤖 AI Decision Engine
 
-![AI Decision](screenshots/AI Decision.jpeg)
+![AI Decision](screenshots/AI-Decision.jpeg)
 
 ---
 
