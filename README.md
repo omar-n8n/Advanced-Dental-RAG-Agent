@@ -701,7 +701,7 @@ I specialize in building intelligent automation systems using:
 ### Connect with me
 
 - GitHub: https://github.com/omar-n8n
-- LinkedIn: *(Add your LinkedIn profile here)*
+- LinkedIn: https://www.linkedin.com/in/omar-ali-007000379/
 
 ---
 <div align="center">
