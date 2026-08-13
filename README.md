@@ -43,14 +43,11 @@ Designed to automate the entire patient journey—from answering inquiries to bo
 
 # 🦷 Project Overview
 
-This project is a complete AI-powered automation platform for dental clinics.
+This project demonstrates how AI Agents, Retrieval-Augmented Generation (RAG), workflow automation, and API integrations can be combined to build a fully autonomous customer support and appointment management platform for dental clinics.
 
-Unlike a traditional chatbot, this system combines multiple intelligent workflows into a single scalable architecture capable of handling customer communication automatically.
+The system automates the complete patient journey—from answering inquiries to appointment booking, attendance management, customer record maintenance, human escalation, and automated post-visit feedback.
 
-The platform receives customer requests through **Meta Messenger**, analyzes user intent using AI, retrieves clinic knowledge through **Retrieval-Augmented Generation (RAG)**, routes conversations intelligently, books appointments, manages attendance, maintains a customer database, escalates complex cases, and automatically requests patient feedback after appointments.
-
-The entire workflow is fully automated using **n8n** with modular architecture for easy maintenance and scalability.
-
+Designed using a modular architecture, every workflow is independent, scalable, and production-ready.
 ---
 
 # ⭐ Why This Project?
@@ -102,20 +99,29 @@ This automation platform helps clinics:
 
 ---
 
-# 🚀 Core Features
+# 📈 Workflow Statistics
 
-## 🤖 AI Customer Support
+| Metric | Value |
+|--------|------:|
+| Independent Workflows | 8 |
+| AI Agents | 2 |
+| Google Sheets Integrations | 4 |
+| External APIs | 6 |
+| Dashboard | 1 |
+| Messenger Automations | 100% |
 
-Provides accurate, context-aware answers using Retrieval-Augmented Generation (RAG).
+---
 
-### Capabilities
-
-- OpenAI GPT
-- Pinecone Vector Database
-- Conversation Memory
-- AI Knowledge Retrieval
-- Clinic Knowledge Base
-- Natural Language Responses
+| Feature | Description |
+|----------|-------------|
+| 🤖 AI Customer Support | OpenAI + Pinecone RAG |
+| 📅 Appointment Booking | Fully automated booking |
+| 👥 Customer CRM | Automatic customer management |
+| ✅ Attendance | Messenger attendance workflow |
+| 💬 Weekly Feedback | Automated follow-up |
+| 🚨 Escalation | Human ticket system |
+| 📊 Dashboard | Looker Studio Analytics |
+| 📚 Knowledge Base | Google Drive Sync |
 
 ---
 
@@ -514,6 +520,20 @@ AI Dental Clinic Automation
 
 ---
 
+# 🛡️ Error Handling
+
+The workflow includes multiple validation layers to ensure reliable execution.
+
+- Doctor validation
+- Appointment conflict detection
+- Existing customer verification
+- Attendance validation
+- AI confidence routing
+- Human escalation fallback
+- API retry logic
+
+---
+
 # 🔗 External Integrations
 
 The system integrates with multiple external services:
@@ -684,15 +704,16 @@ I specialize in building intelligent automation systems using:
 - LinkedIn: *(Add your LinkedIn profile here)*
 
 ---
-
 <div align="center">
-
-## ⭐ If you found this project useful, consider giving it a Star!
-
-It helps others discover the project and supports my work.
 
 ---
 
-Made with ❤️ using n8n, OpenAI and AI Automation
+⭐ **If you found this project useful, consider giving it a Star!**
+
+It helps others discover the project and supports my work.
+
+Built with ❤️ by **Omar Ali Osman**
+
+Powered by **n8n • OpenAI • Pinecone • AI Automation**
 
 </div>
