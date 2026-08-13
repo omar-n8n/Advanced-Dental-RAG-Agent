@@ -426,7 +426,7 @@ Automatically follows up with patients after appointments.
 
 ## 📅 Booking-flow
 
-![Booking-flow](Screenshots/Booking-flow.jpeg)
+![Booking Flow](Screenshots/Booking-flow.jpeg)
 
 ---
 
@@ -438,7 +438,7 @@ Automatically follows up with patients after appointments.
 
 ## 👥 Customer-Database
 
-![Customer-Database](Screenshots/Customer-Database.jpeg)
+![Customer Database](Screenshots/Customer-Database.jpeg)
 
 ---
 
@@ -450,7 +450,7 @@ Automatically follows up with patients after appointments.
 
 ## 💬 Weekly-Feedback
 
-![Weekly-Feedback](Screenshots/Weekly-Feedback.jpeg)
+![Weekly Feedback](Screenshots/Weekly-Feedback.jpeg)
 
 ---
 
