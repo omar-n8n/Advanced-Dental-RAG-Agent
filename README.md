@@ -426,19 +426,19 @@ Automatically follows up with patients after appointments.
 
 ## 📅 Appointment Booking
 
-![Booking Flow](Screenshots/Booking-FlowCopy.jpeg)
+![Booking Flow](Screenshots/Booking-Flow.jpeg)
 
 ---
 
-## ✅ Attendance Management
+## ✅ Attendance
 
-![Attendance Management](Screenshots/Attendance.jpeg)
+![Attendance](Screenshots/Attendance.jpeg)
 
 ---
 
-## 👥 Customer CRM
+## 👥 Customer-Database
 
-![Customer CRM](Screenshots/Customer-Database.jpeg)
+![Customer-Database](Screenshots/Customer-Database.jpeg)
 
 ---
 
@@ -450,7 +450,7 @@ Automatically follows up with patients after appointments.
 
 ## 💬 Weekly Feedback
 
-![Weekly Feedback](Screenshots/Weekly-Feedback.jpeg)
+![Weekly-Feedback](Screenshots/Weekly-Feedback.jpeg)
 
 ---
 
