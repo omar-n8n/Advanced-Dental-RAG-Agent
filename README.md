@@ -424,9 +424,9 @@ Automatically follows up with patients after appointments.
 
 ---
 
-## 📅 Booking-Flow
+## 📅 Booking-flow
 
-![Booking-Flow](Screenshots/Booking-Flow.jpeg)
+![Booking-flow](Screenshots/Booking-flow.jpeg)
 
 ---
 
