@@ -424,9 +424,9 @@ Automatically follows up with patients after appointments.
 
 ---
 
-## 📅 Appointment Booking
+## 📅 Booking-Flow
 
-![Booking Flow](Screenshots/Booking-Flow.jpeg)
+![Booking-Flow](Screenshots/Booking-Flow.jpeg)
 
 ---
 
@@ -448,7 +448,7 @@ Automatically follows up with patients after appointments.
 
 ---
 
-## 💬 Weekly Feedback
+## 💬 Weekly-Feedback
 
 ![Weekly-Feedback](Screenshots/Weekly-Feedback.jpeg)
 
