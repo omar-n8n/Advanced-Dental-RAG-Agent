@@ -1,280 +1,699 @@
-# 🦷 AI Dental Clinic Customer Support & Appointment Booking System
+<div align="center">
 
-An advanced AI-powered customer support and appointment booking system built using **n8n**, **OpenAI**, **Pinecone Vector Store**, and **Retrieval-Augmented Generation (RAG)**.
+# 🦷 AI Dental Clinic Automation System
 
-The workflow combines AI-powered knowledge retrieval, automated appointment scheduling, intelligent routing, human escalation, and real-time analytics into one complete solution for modern dental clinics.
+### Enterprise-Grade AI Automation Platform
 
----
+An intelligent automation platform for modern dental clinics built using **n8n**, **OpenAI**, **Pinecone**, **RAG**, and multiple API integrations.
 
-# ✨ Key Features
+Designed to automate the entire patient journey—from answering inquiries to booking appointments, managing attendance, maintaining customer records, escalating complex requests, and collecting post-visit feedback.
 
-### 🤖 AI-Powered Customer Support (RAG)
-Uses OpenAI with Pinecone Vector Store to provide accurate, context-aware answers based on the clinic's knowledge base.
+<br>
 
-### 📅 AI Appointment Booking
-Patients can book appointments directly through the AI assistant. The workflow checks doctor availability, schedules appointments, and stores booking information automatically.
+![Workflow Overview](Screenshots/Workflow-Overview.png)
 
-### 📊 Dashboard & Analytics
-Provides a centralized dashboard for monitoring appointments, support tickets, workflow performance, and customer interactions.
+<br>
 
-### 🔄 Automated Knowledge Synchronization
-Keeps the clinic knowledge base up to date using:
+![n8n](https://img.shields.io/badge/n8n-Automation-EA4B71?style=for-the-badge&logo=n8n)
+![OpenAI](https://img.shields.io/badge/OpenAI-GPT-412991?style=for-the-badge&logo=openai)
+![Pinecone](https://img.shields.io/badge/Pinecone-Vector%20Database-0055FF?style=for-the-badge)
+![Google Sheets](https://img.shields.io/badge/Google%20Sheets-Database-34A853?style=for-the-badge&logo=googlesheets)
+![Messenger](https://img.shields.io/badge/Meta%20Messenger-Webhook-0084FF?style=for-the-badge&logo=messenger)
+![Looker Studio](https://img.shields.io/badge/Looker%20Studio-Dashboard-4285F4?style=for-the-badge)
 
-- Automatic Google Drive Trigger
-- Manual Ingestion Pipeline
-
-Documents are automatically processed, chunked, embedded, and stored in Pinecone.
-
-### ⚡ Intelligent AI Routing
-Every customer request is evaluated based on confidence and intent before being routed automatically.
-
-### 🚨 Human Escalation
-When AI cannot confidently answer:
-
-- Generates a unique Ticket ID
-- Logs customer information into Google Sheets
-- Sends an email notification to the support team
-- Notifies the customer that a human agent will follow up
-
-### ⚪ Out-of-Scope Detection
-Politely handles unsupported or unrelated questions while keeping the conversation professional.
-
-### ⚡ Real-Time Messenger Integration
-Processes incoming Meta Messenger Webhooks instantly for seamless communication.
-
-# 📸 Project Preview
-
-## 🖥️ Dashboard
-
-![Dashboard](Screenshots/Dashboard.jpeg)
+</div>
 
 ---
 
-## 📅 Appointment Booking Flow
+# 📖 Table of Contents
 
-![Booking Flow](Screenshots/Booking-Flow.jpeg)
+- Project Overview
+- Why This Project?
+- Business Value
+- Core Features
+- System Architecture
+- Workflow Modules
+- Workflow Screenshots
+- Technology Stack
+- Installation
+- Required Credentials
+- Future Improvements
+- Author
 
 ---
 
-## 🤖 AI Decision Engine
+# 🦷 Project Overview
 
-![AI Decision](Screenshots/AI-Decision.jpeg)
+This project is a complete AI-powered automation platform for dental clinics.
+
+Unlike a traditional chatbot, this system combines multiple intelligent workflows into a single scalable architecture capable of handling customer communication automatically.
+
+The platform receives customer requests through **Meta Messenger**, analyzes user intent using AI, retrieves clinic knowledge through **Retrieval-Augmented Generation (RAG)**, routes conversations intelligently, books appointments, manages attendance, maintains a customer database, escalates complex cases, and automatically requests patient feedback after appointments.
+
+The entire workflow is fully automated using **n8n** with modular architecture for easy maintenance and scalability.
 
 ---
 
-## 🔄 Agent Overview
+# ⭐ Why This Project?
 
-![Agent Overview](Screenshots/Agent.jpeg)
+Most clinics still rely heavily on receptionists to manually:
+
+- Answer repetitive questions
+- Schedule appointments
+- Track attendance
+- Update customer records
+- Follow up with patients
+- Escalate support cases
+
+This project replaces repetitive manual work with AI-powered workflows while still allowing human intervention whenever necessary.
+
+The result is:
+
+- Faster response times
+- Better customer experience
+- Reduced administrative workload
+- Organized customer database
+- Fully automated workflows
+
 ---
 
-# 🆕 Version 2 Improvements
+# 💼 Business Value
 
-✅ AI Appointment Booking Flow
+This automation platform helps clinics:
 
-✅ Interactive Dashboard
+✅ Reduce receptionist workload
 
-✅ Improved Workflow Logic
+✅ Answer patients instantly 24/7
 
-✅ Better Ticket Management
+✅ Automate appointment booking
 
-✅ Enhanced AI Routing
+✅ Automatically track attendance
 
-✅ Performance Optimizations
+✅ Maintain an organized customer database
+
+✅ Reduce missed appointments
+
+✅ Collect patient feedback automatically
+
+✅ Escalate only difficult conversations to staff
+
+✅ Improve operational efficiency
+
+✅ Scale customer support without increasing staff
+
+---
+
+# 🚀 Core Features
+
+## 🤖 AI Customer Support
+
+Provides accurate, context-aware answers using Retrieval-Augmented Generation (RAG).
+
+### Capabilities
+
+- OpenAI GPT
+- Pinecone Vector Database
+- Conversation Memory
+- AI Knowledge Retrieval
+- Clinic Knowledge Base
+- Natural Language Responses
+
+---
+
+## 📅 AI Appointment Booking
+
+Patients can schedule appointments directly through Messenger.
+
+### Workflow
+
+- Collect patient information
+- Validate doctor or specialty
+- Check appointment availability
+- Create appointment automatically
+- Send booking confirmation
+
+---
+
+## ✅ Attendance Management
+
+Reception staff can update attendance directly from Messenger using interactive buttons.
+
+### Workflow
+
+- Patient selection
+- Present / Absent confirmation
+- Attendance update
+- Google Sheets synchronization
+
+---
+
+## 👥 Customer CRM
+
+Automatically manages customer information.
+
+### Includes
+
+- Customer lookup
+- Existing customer detection
+- New customer creation
+- Customer updates
+- Messenger ID management
+- Customer history
+
+---
+
+## 💬 Weekly Feedback Automation
+
+Automatically follows up with patients after completed appointments.
+
+### Workflow
+
+- Daily schedule trigger
+- Appointment validation
+- 24-hour waiting period
+- Messenger feedback request
+
+---
+
+## 🚨 Human Escalation
+
+When AI confidence is insufficient:
+
+- Generate ticket
+- Save ticket information
+- Notify support team
+- Notify customer
+
+---
+
+## 🧠 AI Decision Engine
+
+Every incoming message is analyzed before selecting the appropriate workflow.
+
+Possible routes include:
+
+- Customer Support
+- Appointment Booking
+- Attendance Management
+- Customer Database
+- Human Escalation
+- Out-of-Scope Requests
 
 ---
 
 # 🏗️ System Architecture
 
-```
-             Google Drive
-                   │
-           Automatic / Manual
-             Knowledge Sync
-                   │
-         Recursive Text Splitter
-                   │
-        OpenAI Embeddings
-                   │
-          Pinecone Vector Store
-                   │
-────────────────────────────────────────────
+```text
+                          Google Drive
+                               │
+               Knowledge Synchronization Pipeline
+                               │
+                 Recursive Character Splitter
+                               │
+                     OpenAI Embeddings
+                               │
+                  Pinecone Vector Database
+                               │
+────────────────────────────────────────────────────────────
 
-        Customer (Messenger)
+                     Meta Messenger
 
-                │
+                            │
 
-      Messenger Webhook
+                   Messenger Webhook
 
-                │
+                            │
 
-   Customer Request Processing
+                  Customer Request Router
 
-                │
+        ┌─────────────┬─────────────┬─────────────┐
+        │             │             │
+        ▼             ▼             ▼
 
-       AI Decision Engine
+   Customer CRM   Attendance    AI Customer Support
+                    Workflow            (RAG)
 
-      ┌─────────┼─────────┐
-      │         │         │
- Answered   Booking   Escalation
-      │         │         │
-Messenger  Google Sheets Ticket System
-      │         │         │
- Dashboard  Booking DB  Email Alerts
+        │             │             │
+
+        └─────────────┴──────┐      │
+
+                              ▼
+
+                     AI Decision Engine
+
+      ┌──────────────┬──────────────┬──────────────┐
+      │              │              │
+      ▼              ▼              ▼
+
+ Appointment     Escalation      AI Response
+
+      │
+
+      ▼
+
+ Google Sheets Database
+
+      │
+
+      ▼
+
+ Weekly Feedback Workflow
+
+      │
+
+      ▼
+
+ Looker Studio Dashboard
 ```
 
 ---
 
-# 🛠️ Workflow Modules
+# 🔄 Workflow Modules
 
-## 1️⃣ Knowledge Base Management
+The system is divided into multiple independent automation modules, making it scalable, maintainable, and easy to expand.
 
-The workflow automatically synchronizes clinic documents into Pinecone.
+---
 
-### Automatic Pipeline
+## 🟨 Knowledge Base Management
 
-- Google Drive Trigger
+Responsible for building and maintaining the clinic's AI knowledge base.
+
+### Responsibilities
+
+- Google Drive Synchronization
+- Manual Knowledge Refresh
 - Document Processing
-- Recursive Character Text Splitter
+- Text Chunking
 - OpenAI Embeddings
-- Pinecone Vector Store
-
-### Manual Pipeline
-
-Allows administrators to manually refresh the knowledge base whenever needed.
+- Pinecone Storage
 
 ---
 
-## 2️⃣ Customer Request Processing
+## ⚪ Customer Request Processing
 
-Handles incoming patient messages through Messenger.
+Handles every incoming Messenger request.
 
-Responsibilities include:
+### Responsibilities
 
-- Receiving Webhook events
-- Extracting customer information
-- Processing messages
-- Retrieving relevant knowledge using Pinecone
-- Passing context to the AI Agent
-
----
-
-## 3️⃣ AI Decision Engine
-
-The AI evaluates every request and determines the most appropriate action based on:
-
-- Intent
-- Confidence
-- Retrieved Context
-- Business Rules
+- Receive Messenger Webhook
+- Identify Customer
+- Extract Request
+- Route Conversation
 
 ---
 
-## 4️⃣ Workflow Execution Paths
+## 🟢 AI Customer Support
 
-### 🟢 Answered Response
+Handles general clinic inquiries using Retrieval-Augmented Generation.
 
-The AI confidently answers the customer's question immediately.
+### Features
 
----
-
-### 📅 Appointment Booking
-
-If the customer wants to schedule a visit:
-
-- Collects booking information
-- Validates availability
-- Stores appointment data
-- Sends confirmation to the patient
+- Context Retrieval
+- AI Conversation
+- Conversation Memory
+- Knowledge Search
+- Intelligent Responses
 
 ---
 
-### 🔵 Human Escalation
+## 🟦 AI Appointment Booking
 
-If human assistance is required:
+Responsible for complete appointment scheduling.
 
-- Generates Ticket ID
-- Saves ticket into Google Sheets
-- Emails the support team
-- Notifies the customer
+### Booking Pipeline
 
----
+1. Collect Patient Information
 
-### ⚪ Out-of-Scope
+2. Validate Doctor / Specialty
 
-Handles unsupported questions with predefined professional responses.
+3. Check Availability
 
----
+4. Create Appointment
 
-# 📸 Screenshots
-
-Screenshots of the workflow, dashboard, and booking flow are available in the **/screenshots** folder.
-
-Included images:
-
-- Workflow Overview
-- AI Decision Flow
-- Appointment Booking Flow
-- Dashboard
-- Ticket Management
-- Knowledge Base Pipeline
+5. Confirm Booking
 
 ---
 
-# ⚡ Technology Stack
+## 🟥 Attendance Management
 
-- **Workflow Automation:** n8n
-- **AI Model:** OpenAI GPT
-- **Vector Database:** Pinecone
-- **RAG Architecture**
-- **Embeddings:** OpenAI Embeddings
-- **Text Chunking:** Recursive Character Text Splitter
-- **Database:** Google Sheets
-- **Knowledge Storage:** Google Drive
-- **Email:** Gmail API
-- **Messaging:** Meta Messenger Webhooks
-- **Dashboard:** Looker Studio
+Designed for reception staff.
+
+### Attendance Pipeline
+
+1. Detect Attendance Request
+
+2. Display Patient List
+
+3. Select Patient
+
+4. Present / Absent Decision
+
+5. Update Attendance Record
 
 ---
 
-# 🚀 Getting Started
+## 🟪 Customer CRM
 
-Clone the repository:
+Automatically maintains customer information.
+
+### Features
+
+- Customer Lookup
+
+- Existing Customer Detection
+
+- Create Customer
+
+- Update Customer
+
+- Store Messenger ID
+
+- Customer History
+
+---
+
+## 🔵 Human Escalation
+
+Transfers conversations that AI cannot confidently handle.
+
+### Pipeline
+
+- Generate Ticket
+
+- Save Ticket
+
+- Notify Support Team
+
+- Notify Customer
+
+---
+
+## ⚫ Weekly Feedback Automation
+
+Automatically follows up with patients after appointments.
+
+### Pipeline
+
+- Daily Schedule Trigger
+
+- Validate Appointment
+
+- Retrieve Customer
+
+- Send Messenger Feedback
+
+---
+
+# 📸 Workflow Screenshots
+
+## 🖥️ Complete Workflow
+
+![Workflow Overview](Screenshots/Agent1.png)
+
+
+---
+## 🖥️ Complete Workflow
+
+![Workflow Overview](Screenshots/Agent2.png)
+
+
+---
+
+## 🧠 AI Decision Engine
+
+![AI Decision Engine](Screenshots/AI Decision.png)
+
+---
+
+## 📅 Appointment Booking
+
+![Appointment Booking](Screenshots/Booking Flow.png)
+
+---
+
+## ✅ Attendance Management
+
+![Attendance Management](Screenshots/Attendance.png)
+
+---
+
+## 👥 Customer CRM
+
+![Customer CRM](Screenshots/Customer Database.png)
+
+---
+
+## 🚨 Human Escalation
+
+![Escalation Workflow](Screenshots/Escalation-Flow.png)
+
+---
+
+## 💬 Weekly Feedback
+
+![Weekly Feedback](Screenshots/Weekly Feedback.png)
+
+---
+
+## 📊 Dashboard
+
+![Dashboard](Screenshots/Dashboard.png)
+
+---
+
+# 📂 Project Structure
+
+```text
+AI Dental Clinic Automation
+
+├── Messenger Webhook
+
+├── Customer Request Processing
+
+├── AI Customer Support
+
+├── AI Decision Engine
+
+├── Appointment Booking
+
+├── Attendance Management
+
+├── Customer CRM
+
+├── Human Escalation
+
+├── Weekly Feedback
+
+├── Knowledge Base
+
+├── Google Sheets
+
+├── Pinecone
+
+└── Dashboard
+```
+
+---
+
+# ⚙️ Technology Stack
+
+| Category | Technologies |
+|----------|--------------|
+| Workflow Automation | n8n |
+| Artificial Intelligence | OpenAI GPT |
+| AI Architecture | AI Agents |
+| Knowledge Retrieval | Retrieval-Augmented Generation (RAG) |
+| Vector Database | Pinecone |
+| Embeddings | OpenAI Embeddings |
+| Database | Google Sheets |
+| Knowledge Storage | Google Drive |
+| Messaging Platform | Meta Messenger |
+| Email Notifications | Gmail API |
+| Dashboard | Looker Studio |
+| Programming | JavaScript |
+| APIs | HTTP Request Nodes |
+
+---
+
+# 🔗 External Integrations
+
+The system integrates with multiple external services:
+
+- ✅ OpenAI API
+- ✅ Pinecone
+- ✅ Google Drive
+- ✅ Google Sheets
+- ✅ Gmail API
+- ✅ Meta Messenger Webhooks
+- ✅ Looker Studio
+
+---
+
+# ⚡ AI Workflow Lifecycle
+
+```text
+Customer Message
+       │
+       ▼
+Messenger Webhook
+       │
+       ▼
+Customer Identification
+       │
+       ▼
+Intent Detection
+       │
+       ▼
+AI Decision Engine
+       │
+ ┌─────┼───────────────┬─────────────┐
+ │     │               │             │
+ ▼     ▼               ▼             ▼
+Support Booking   Attendance   Escalation
+ │        │             │            │
+ ▼        ▼             ▼            ▼
+Reply   Create      Update      Create
+        Appointment Attendance  Ticket
+```
+
+---
+
+# 🚀 Installation
+
+## 1. Clone Repository
 
 ```bash
-git clone https://github.com/omar-n8n/Advanced-Dental-RAG-Agent.git
+git clone https://github.com/omar-n8n/AI-Dental-Clinic-Automation-System.git
 ```
 
-Import the workflow JSON into your n8n instance.
+---
 
-Configure the following credentials:
+## 2. Import Workflow
+
+Open your n8n instance and import the workflow JSON.
+
+---
+
+## 3. Configure Credentials
+
+Create the required credentials:
 
 - OpenAI API
 - Pinecone
-- Google Drive
 - Google Sheets
-- Gmail API
+- Google Drive
+- Gmail
 - Meta Messenger
-- Looker Studio (Optional)
-
-Activate the workflow and start automating your dental clinic.
 
 ---
 
-# 💡 Use Cases
+## 4. Activate Workflow
 
-- Dental Clinics
-- Medical Centers
-- Healthcare Customer Support
-- Appointment Scheduling
-- AI Receptionist
-- AI Customer Service
+Enable all required workflows.
+
+The system is now ready to receive Messenger messages.
+
+---
+
+# 📋 Required Services
+
+- OpenAI Account
+- Pinecone Account
+- Google Cloud Project
+- Meta Developer Account
+- n8n Instance
+
+---
+
+# 🎯 Supported Use Cases
+
+This project can be adapted for:
+
+- 🦷 Dental Clinics
+- 🏥 Medical Centers
+- 👨‍⚕️ Private Doctors
+- 💄 Beauty Clinics
+- 🧑‍⚕️ Healthcare Customer Support
+- 📅 Appointment Scheduling
+- 📞 AI Receptionists
+- 🤖 AI Customer Support
+- 📊 CRM Automation
+
+---
+
+# 📈 Scalability
+
+The workflow was designed using a modular architecture.
+
+New modules can easily be added, such as:
+
+- WhatsApp Cloud API
+- Telegram
+- SMS Notifications
+- Voice AI Receptionist
+- Payment Integration
+- Google Calendar
+- Multi-Clinic Support
+- Patient Reminder System
+
+without modifying the existing architecture.
+
+---
+
+# 🛣️ Future Roadmap
+
+Planned improvements include:
+
+- Voice AI Agent
+- WhatsApp Integration
+- Google Calendar Synchronization
+- Automatic Appointment Reminders
+- Online Payments
+- Multi-language Support
+- Analytics Dashboard Enhancements
+- Multi-Clinic Deployment
+
+---
+
+# 📄 License
+
+This project is intended for educational and portfolio purposes.
+
+Feel free to explore the workflow architecture and adapt it for your own automation projects.
 
 ---
 
 # 👨‍💻 Author
 
-**Omar Ali Osman**
+## Omar Ali Osman
 
 AI Automation Developer
 
-Specialized in building AI-powered workflows using n8n, OpenAI, APIs, and RAG systems.
+I specialize in building intelligent automation systems using:
+
+- n8n
+- OpenAI
+- AI Agents
+- Pinecone
+- RAG
+- APIs
+- Workflow Automation
+
+### Connect with me
+
+- GitHub: https://github.com/omar-n8n
+- LinkedIn: *(Add your LinkedIn profile here)*
+
+---
+
+<div align="center">
+
+## ⭐ If you found this project useful, consider giving it a Star!
+
+It helps others discover the project and supports my work.
+
+---
+
+Made with ❤️ using n8n, OpenAI and AI Automation
+
+</div>
